@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Print the hostname of the server
-echo "Executing script on $(hostname)
+echo "Executing script on $(hostname)"
 
 # Define the kafka version to install
 read -p "Enter the Kafka version to install (press Enter for latest): " KAFKA_VERSION

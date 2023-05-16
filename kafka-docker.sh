@@ -4,6 +4,12 @@
 read -p "Enter the Kafka version to install (press Enter for latest): " KAFKA_VERSION
 KAFKA_VERSION="${KAFKA_VERSION:-latest}"
 
+#!/bin/bash
+
+# Define the kafka version to install
+read -p "Enter the Kafka version to install (press Enter for latest): " KAFKA_VERSION
+KAFKA_VERSION="${KAFKA_VERSION:-latest}"
+
 # Define the variable for docker-compose file
 DOCKER_COMPOSE_FILE=docker-compose.yml
 
@@ -11,15 +17,15 @@ DOCKER_COMPOSE_FILE=docker-compose.yml
 if ! command -v docker-compose &> /dev/null
 then
   echo "Docker Compose is not installed. Installing now..."
-  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  echo payoda@123 | sudo -S curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   echo "Docker Compose has been successfully installed."
 else
   echo "Docker Compose is already installed."
 fi
 
 # Provide Docker User Rights
-sudo chown root:docker /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+echo payoda@123 | sudo -S chown root:docker /usr/local/bin/docker-compose
+echo payoda@123 | sudo -S chmod +x /usr/local/bin/docker-compose
 
 # Get the IP address of the current server
 HOST_IP=$(hostname -I | awk '{print $1}')
@@ -125,5 +131,5 @@ services:
       - zoo3
 EOF
 
-#Start Docker-Compose file
-sudo docker-compose up -d
+# Start Docker-Compose file
+echo payoda@123 | sudo -S docker-compose up -d
